@@ -24,5 +24,9 @@ class Place
     @@places_visited.push(self)
   end
 
+  define_singleton_method(:clear) do
+    @@places_visited = []
+  end
+
 
 end

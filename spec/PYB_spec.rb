@@ -5,6 +5,9 @@ require "PYB"
 
 
 describe(Place) do
+  before() do
+    Place.clear()
+  end
 
   describe('description') do
     it('allows you to add a description of a place that yo uhave visited') do
@@ -28,11 +31,18 @@ describe(Place) do
 
   describe('save') do
     it('saves the location and description of a plae') do
-    test_place = Place.new('Ukraine', 'a magical place')
-    test_place.save()
-    expect(Place.all()).to(eq([test_place]))
+      test_place = Place.new('Ukraine', 'a magical place')
+      test_place.save()
+      expect(Place.all()).to(eq([test_place]))
+    end
   end
-end
 
+  describe('.clear') do
+    it('clears the places visted') do
+      Place.new('Ukraine', 'A Magical place').save
+      Place.clear()
+      expect(Place.all()).to(eq([]))
+    end
+  end
 
 end
