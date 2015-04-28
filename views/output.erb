@@ -1,0 +1,28 @@
+<h1>Here is a some places you have visited:</h1>
+
+  <!-- <h2>Location: <%= @output_location %></h2>
+
+
+  <h2>Here is a brief description:<%= @output_description %></h2> -->
+
+
+<% @all_places.each do |place| %>
+  <ul>
+      <li><h1> Location: <%= place.name %></h1>
+
+          <h2>Here is a brief description: </h2>
+
+          <p><%= place.description %></p>
+
+      </li>
+
+  </ul>
+
+
+
+
+<% end %>
+
+<form action='/'>
+<button type="submit" class="btn btn-success">Add more places</button>
+</form>
